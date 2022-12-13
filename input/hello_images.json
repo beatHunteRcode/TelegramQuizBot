@@ -1,0 +1,19 @@
+{
+  "images_urls": [
+    {
+      "url": "./input/images/hello/image.jpg"
+    },
+    {
+      "url": "./input/images/hello/2rieru.jpg"
+    },
+    {
+      "url": "./input/images/hello/good_day.jpg"
+    },
+    {
+      "url": "./input/images/hello/hello_smile.jpg"
+    },
+    {
+      "url": "./input/images/hello/hi.jpg"
+    }
+  ]
+}

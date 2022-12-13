@@ -1,0 +1,18 @@
+{
+  "no_reward": {
+    "text": "Что-то ты совсем плохо на всё ответил... Попробуй еще раз... 😵‍💫",
+    "image_url": "./input/images/rewards/poker_face.png"
+  },
+  "low_reward": {
+    "text": "Твои знания весьма умеренны... \uD83D\uDE28",
+    "image_url": "./input/images/rewards/sad_egg.jpg"
+  },
+  "middle_reward": {
+    "text": "Хорошие знания. Ты хорошо подготовлен к жизненным ситуациям! \uD83E\uDD13",
+    "image_url": "./input/images/rewards/the-rock-dababy.gif"
+  },
+  "high_reward": {
+    "text": "Ух ты! Ты отлично со всем справился! \uD83E\uDD29\uD83D\uDC4D",
+    "image_url": "./input/images/rewards/beauty.jpg"
+  }
+}

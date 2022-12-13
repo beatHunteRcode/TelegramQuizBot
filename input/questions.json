@@ -1,0 +1,316 @@
+{
+    "questions": [
+      {
+        "text": "Этот котик милый? 🥰😍😍🥰",
+        "answers": [
+          {
+            "text": "Да",
+            "isRight": true
+          },
+          {
+            "text": "Нет",
+            "isRight": false
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/1/kitty_sleep.jpg"
+          },
+          {
+            "url": "./input/images/question/1/kitty_hello.jpg"
+          },
+          {
+            "url": "./input/images/question/1/kitty_good.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Сколько карт в колоде Таро? 🌑✨✨💫✨✨🌕",
+        "answers": [
+          {
+            "text": "52",
+            "isRight": false
+          },
+          {
+            "text": "36",
+            "isRight": false
+          },
+          {
+            "text": "78",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/2/taro_three.jpg"
+          },
+          {
+            "url": "./input/images/question/2/taro_many.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Сколько будет 2+2*2 👁👄👁",
+        "answers": [
+          {
+            "text": "0",
+            "isRight": false
+          },
+          {
+            "text": "2",
+            "isRight": false
+          },
+          {
+            "text": "4",
+            "isRight": false
+          },
+          {
+            "text": "6",
+            "isRight": true
+          },
+          {
+            "text": "8",
+            "isRight": false
+          },
+          {
+            "text": "10",
+            "isRight": false
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/3/funny_digits.jpeg"
+          },
+          {
+            "url": "./input/images/question/3/clever_boy.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Какой самый крутой знак зодиака? ♉️♊️♋️♍️♎️♌️♉️♈️",
+        "answers": [
+          {
+            "text": "Лев",
+            "isRight": false
+          },
+          {
+            "text": "Весы",
+            "isRight": true
+          },
+          {
+            "text": "Рак",
+            "isRight": true
+          },
+          {
+            "text": "Водолей",
+            "isRight": false
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/4/zodiac_blue.jpg"
+          },
+          {
+            "url": "./input/images/question/4/zodiac_purple.jpg"
+          },
+          {
+            "url": "./input/images/question/4/zodiac_pink.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Какой из представленных исполнителей лучший? 🎶🎵🎶🎵🎶🎵🎶🎵",
+        "answers": [
+          {
+            "text": "Серёга",
+            "isRight": true
+          },
+          {
+            "text": "Бьянка",
+            "isRight": true
+          },
+          {
+            "text": "Максим",
+            "isRight": true
+          },
+          {
+            "text": "Тату",
+            "isRight": true
+          },
+          {
+            "text": "Иван Дорн",
+            "isRight": true
+          },
+          {
+            "text": "ВИА Гра",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/5/listening.jpg"
+          },
+          {
+            "url": "./input/images/question/5/volume_100.png"
+          }
+        ]
+      },
+      {
+        "text": "Скриншот из какой компьютерный игры представлен выше? 🎮",
+        "answers": [
+          {
+            "text": "Шрек 2",
+            "isRight": true
+          },
+          {
+            "text": "Мадагаскар",
+            "isRight": true
+          },
+          {
+            "text": "Барби: Показ Мод",
+            "isRight": true
+          },
+          {
+            "text": "101 долматинец",
+            "isRight": true
+          },
+          {
+            "text": "Барби: Волшебство Пегаса",
+            "isRight": true
+          },
+          {
+            "text": "Подводная братва",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/6/barbie.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Какая формула у Второга закона Ньютона? 📚🏞🙊",
+        "answers": [
+          {
+            "text": "S = V * t",
+            "isRight": false
+          },
+          {
+            "text": "F = m * a",
+            "isRight": true
+          },
+          {
+            "text": "E = m * c^2",
+            "isRight": false
+          },
+          {
+            "text": "D = b^2 - 4 * a * c",
+            "isRight": false
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/7/emc.jpg"
+          },
+          {
+            "url": "./input/images/question/7/isaac.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Какой чай самый вкусный? ☕️🫖☕️",
+        "answers": [
+          {
+            "text": "Чай",
+            "isRight": true
+          },
+          {
+            "text": "Индийский чай",
+            "isRight": true
+          },
+          {
+            "text": "Грузинский чай",
+            "isRight": true
+          },
+          {
+            "text": "Иглохлох чай",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/8/teapot.jpg"
+          },
+          {
+            "url": "./input/images/question/8/tea.jpg"
+          },
+          {
+            "url": "./input/images/question/8/light_tea.jpeg"
+          }
+        ]
+      },
+      {
+        "text": "Какое пиво самое лучшее? 🍺🍻🥂🍾🥃",
+        "answers": [
+          {
+            "text": "Hoogarden",
+            "isRight": false
+          },
+          {
+            "text": "Garage",
+            "isRight": false
+          },
+          {
+            "text": "Somersby",
+            "isRight": false
+          },
+          {
+            "text": "Жатецкий Гусь 👍🏻",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/9/barrel_beer.jpg"
+          },
+          {
+            "url": "./input/images/question/9/bottles_beer.jpeg"
+          },
+          {
+            "url": "./input/images/question/9/craft_beer.jpg"
+          }
+        ]
+      },
+      {
+        "text": "Как правильно готовить пиццу? 🍕🍕🍕👨🏻‍🍳👨🏻‍🍳👩🏻‍🍳👨🏻‍🍳👨🏻‍🍳",
+        "answers": [
+          {
+            "text": "Раскатывать тесто бутылкой от пива",
+            "isRight": true
+          },
+          {
+            "text": "Нарезать колбасу, аристократично попивая пиво из чайной чашки",
+            "isRight": true
+          },
+          {
+            "text": "Старательно нарезать сыр. МНОГО сыра.",
+            "isRight": true
+          },
+          {
+            "text": "Стоять рядом и мило танцевать под музычку",
+            "isRight": true
+          }
+        ],
+        "images_urls": [
+          {
+            "url": "./input/images/question/10/pizza.jpg"
+          },
+          {
+            "url": "./input/images/question/10/cook.jpg"
+          }
+        ]
+      }
+
+    ]
+}
