@@ -3,6 +3,8 @@ import java.util.List;
 
 public class Utilities {
 
+    public static String BOT_USERNAME = "null";
+
     public static final String BOT_TOKEN_FILE_PATH = "./input/bot_token";
     public static final String CONFIG_FILE_PATH = "./input/config.json";
     public static final String QUESTION_REPLIES_FILE_PATH = "./input/question_replies.json";

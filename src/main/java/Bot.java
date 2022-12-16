@@ -41,8 +41,6 @@ public class Bot extends TelegramLongPollingBot {
 
     private final Map<Long, Quiz> usersQuizzesMap;
 
-    private final Map<Integer, Reward> rewardsMap;
-
     private int requiredRightAnswersLow;
     private int requiredRightAnswersMiddle;
     private int requiredRightAnswersHigh;
@@ -62,13 +60,12 @@ public class Bot extends TelegramLongPollingBot {
         restartQuizImagesURLsList = new ArrayList<>();
         restartQuizPhrasesList = new ArrayList<>();
         mainComplimentList = new ArrayList<>();
-        rewardsMap = new HashMap<>();
         usersQuizzesMap = new HashMap<>();
     }
 
     @Override
     public String getBotUsername() {
-        return "Leruse4kaQuiz";
+        return Utilities.BOT_USERNAME;
     }
 
     @Override
@@ -123,6 +120,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File(Utilities.CONFIG_FILE_PATH), JsonNode.class);
+            Utilities.BOT_USERNAME = node.findValue("bot_username").asText();
             requiredRightAnswersLow = node.findValue("required_right_answers_low").asInt();
             requiredRightAnswersMiddle = node.findValue("required_right_answers_middle").asInt();
             requiredRightAnswersHigh = node.findValue("required_right_answers_high").asInt();
@@ -292,14 +290,14 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void sendTextWithGif(Long who, String text, String gifPath) {
-        File image = new File(gifPath);
-        SendDocument sendPhoto = new SendDocument();
-        sendPhoto.setChatId(who.toString());
-        sendPhoto.setDocument(new InputFile().setMedia(image));
-        sendPhoto.setCaption(text);
+    private void sendTextWithDocument(Long who, String text, String documentPath) {
+        File document = new File(documentPath);
+        SendDocument sendDocument = new SendDocument();
+        sendDocument.setChatId(who.toString());
+        sendDocument.setDocument(new InputFile().setMedia(document));
+        sendDocument.setCaption(text);
         try {
-            execute(sendPhoto);
+            execute(sendDocument);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -343,15 +341,15 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void sendTextWithGifAndKeyboard(Long who, String text, String imagePath, ReplyKeyboard keyboard) {
-        File image = new File(imagePath);
-        SendDocument sendPhoto = new SendDocument();
-        sendPhoto.setChatId(who.toString());
-        sendPhoto.setDocument(new InputFile().setMedia(image));
-        sendPhoto.setCaption(text);
-        sendPhoto.setReplyMarkup(keyboard);
+    private void sendTextWithDocumentAndKeyboard(Long who, String text, String documentPath, ReplyKeyboard keyboard) {
+        File document = new File(documentPath);
+        SendDocument sendDocument = new SendDocument();
+        sendDocument.setChatId(who.toString());
+        sendDocument.setDocument(new InputFile().setMedia(document));
+        sendDocument.setCaption(text);
+        sendDocument.setReplyMarkup(keyboard);
         try {
-            execute(sendPhoto);
+            execute(sendDocument);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -455,8 +453,14 @@ public class Bot extends TelegramLongPollingBot {
             String url =
                     currentQuestion.imagesURLsList.
                             get(Utilities.getRndIntInRange(0, currentQuestion.imagesURLsList.size() - 1));
-            if (url.contains("gif")) {
-                sendTextWithGifAndKeyboard(userId,
+            if (    url.contains(".gif") ||
+                    url.contains(".mp4") ||
+                    url.contains(".mpeg") ||
+                    url.contains(".avi") ||
+                    url.contains(".mov") ||
+                    url.contains(".webm")
+            ) {
+                sendTextWithDocumentAndKeyboard(userId,
                         "Вопрос " + (usersQuizzesMap.get(userId).currentQuestionIndex + 1) + ": " + questionText,
                         url,
                         keyboardMarkup);
@@ -482,8 +486,14 @@ public class Bot extends TelegramLongPollingBot {
             sendTextWithKeyboard(userId, phrase.getPhrase(), keyboard);
         } else {
             String url = helloImagesURLsList.get(Utilities.getRndIntInRange(0, helloImagesURLsList.size() - 1));
-            if (url.contains("gif")) {
-                sendTextWithGifAndKeyboard(
+            if (    url.contains(".gif") ||
+                    url.contains(".mp4") ||
+                    url.contains(".mpeg") ||
+                    url.contains(".avi") ||
+                    url.contains(".mov") ||
+                    url.contains(".webm")
+            ) {
+                sendTextWithDocumentAndKeyboard(
                         userId,
                         phrase.getPhrase(),
                         helloImagesURLsList.get(Utilities.getRndIntInRange(0, helloImagesURLsList.size() - 1)),
@@ -512,8 +522,14 @@ public class Bot extends TelegramLongPollingBot {
         } else {
             String url = restartQuizImagesURLsList.
                     get(Utilities.getRndIntInRange(0, restartQuizImagesURLsList.size() - 1));
-            if (url.contains("gif")) {
-                sendTextWithGifAndKeyboard(
+            if (    url.contains(".gif") ||
+                    url.contains(".mp4") ||
+                    url.contains(".mpeg") ||
+                    url.contains(".avi") ||
+                    url.contains(".mov") ||
+                    url.contains(".webm")
+            ) {
+                sendTextWithDocumentAndKeyboard(
                         userId,
                         restartQuizPhrase.getPhrase(),
                         restartQuizImagesURLsList.get(Utilities.getRndIntInRange(0, restartQuizImagesURLsList.size() - 1)),
@@ -560,8 +576,14 @@ public class Bot extends TelegramLongPollingBot {
             sendTextWithKeyboard(userId, reward.getText(), getMainComplimentReplyKeyboard());
         }
         else {
-            if (reward.getImageUrl().contains("gif")) {
-                sendTextWithGifAndKeyboard(userId, reward.getText(), reward.getImageUrl(), getMainComplimentReplyKeyboard());
+            if (    reward.getImageUrl().contains(".gif") ||
+                    reward.getImageUrl().contains(".mp4") ||
+                    reward.getImageUrl().contains(".mpeg") ||
+                    reward.getImageUrl().contains(".avi") ||
+                    reward.getImageUrl().contains(".mov") ||
+                    reward.getImageUrl().contains(".webm")
+            ) {
+                sendTextWithDocumentAndKeyboard(userId, reward.getText(), reward.getImageUrl(), getMainComplimentReplyKeyboard());
             }
             else {
                 sendTextWithImageAndKeyboard(userId, reward.getText(), reward.getImageUrl(), getMainComplimentReplyKeyboard());
@@ -592,8 +614,14 @@ public class Bot extends TelegramLongPollingBot {
             sendText(id, compliment.getText());
         }
         else {
-            if (compliment.getImageURL().contains("gif")) {
-                sendTextWithGif(id, compliment.getText(), compliment.getImageURL());
+            if (    compliment.getImageURL().contains(".gif") ||
+                    compliment.getImageURL().contains(".mp4") ||
+                    compliment.getImageURL().contains(".mpeg") ||
+                    compliment.getImageURL().contains(".avi") ||
+                    compliment.getImageURL().contains(".mov") ||
+                    compliment.getImageURL().contains(".webm")
+            ) {
+                sendTextWithDocument(id, compliment.getText(), compliment.getImageURL());
             }
             else {
                 sendTextWithImage(id, compliment.getText(), compliment.getImageURL());
